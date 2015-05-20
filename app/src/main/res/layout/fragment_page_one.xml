@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -11,11 +11,12 @@
 
     <Button
         android:layout_width="250dp"
-        android:layout_height="155dp"
+        android:layout_height="255dp"
         android:text="Press Here"
         android:textColor="@color/white"
         android:id="@+id/pageOneButton"
         android:background="@drawable/circle_button"
-        android:layout_gravity="center_vertical|center_horizontal"/>
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
 
-</LinearLayout>
+</RelativeLayout>
