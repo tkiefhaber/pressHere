@@ -2,11 +2,11 @@ package tv.rustychicken.presshere;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -25,8 +25,12 @@ public class PageOneFragment extends Fragment {
     }
 
     @OnClick(R.id.pageOneButton)
-    public void sayHi(Button button) {
-        button.setText("Hello!");
-        Toast.makeText(getActivity().getApplicationContext(), "boom", Toast.LENGTH_LONG).show();
+    public void pageTwo(Button button) {
+        PageTwoFragment pageTwo = new PageTwoFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment, pageTwo);
+        transaction.addToBackStack(null);
+        transaction.commit();
+
     }
 }
