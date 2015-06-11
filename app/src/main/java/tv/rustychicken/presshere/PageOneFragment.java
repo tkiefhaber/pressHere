@@ -1,6 +1,8 @@
 package tv.rustychicken.presshere;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
@@ -26,8 +28,12 @@ public class PageOneFragment extends Fragment {
 
     @OnClick(R.id.pageOneButton)
     public void pageTwo(Button button) {
+        Vibrator myVib = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
         PageTwoFragment pageTwo = new PageTwoFragment();
+
+        myVib.vibrate(50);
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.setCustomAnimations(R.anim.abc_popup_enter, R.anim.abc_popup_exit);
         transaction.replace(R.id.fragment, pageTwo);
         transaction.addToBackStack(null);
         transaction.commit();

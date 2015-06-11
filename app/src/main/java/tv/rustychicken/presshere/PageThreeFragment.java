@@ -11,25 +11,26 @@ import android.widget.Button;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class PageTwoFragment extends Fragment {
-
-    public PageTwoFragment() {
+public class PageThreeFragment extends Fragment {
+    public PageThreeFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_page_two, container, false);
+        View view = inflater.inflate(R.layout.fragment_page_three, container, false);
         ButterKnife.inject(this, view);
         return view;
     }
 
-    @OnClick(R.id.pageTwoButtonAction)
-    public void pageThree(Button button) {
-        PageThreeFragment pageThree = new PageThreeFragment();
+    @OnClick(R.id.pageThreeActionButton)
+    public void pageFour(Button button) {
+        PageTwoFragment pageFour = new PageTwoFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.setCustomAnimations(R.anim.abc_slide_in_top, R.anim.abc_slide_out_bottom);
-        transaction.replace(R.id.fragment, pageThree);
+        transaction.replace(R.id.fragment, pageFour);
         transaction.addToBackStack(null);
         transaction.commit();
+
     }
+    
 }
